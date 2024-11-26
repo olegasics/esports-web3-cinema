@@ -1,9 +1,9 @@
 {
   "name": "@warren-bank/hls-proxy",
   "description": "Node.js server to proxy HLS video streams",
-  "version":     "3.5.4",
+  "version": "3.5.4",
   "scripts": {
-    "start":     "node hls-proxy/bin/hlsd.js",
+    "start": "node hls-proxy/bin/hlsd.js",
     "sudo": "sudo node hls-proxy/bin/hlsd.js"
   },
   "bin": {
@@ -14,21 +14,22 @@
     "@warren-bank/node-request": "^2.0.12",
     "@warren-bank/url": "^3.1.2",
     "hpagent": "^1.2.0",
+    "liquipedia-api": "^1.0.10",
     "regexp-match-indices": "^1.0.2",
     "tough-cookie": "^3.0.1"
   },
   "license": "GPL-2.0",
   "author": {
-    "name":   "Warren R. Bank",
-    "email":  "warren.r.bank@gmail.com",
-    "url":    "https://github.com/warren-bank"
+    "name": "Warren R. Bank",
+    "email": "warren.r.bank@gmail.com",
+    "url": "https://github.com/warren-bank"
   },
   "homepage": "https://github.com/warren-bank/HLS-Proxy",
   "repository": {
-    "type":   "git",
-    "url":    "https://github.com/warren-bank/HLS-Proxy"
+    "type": "git",
+    "url": "https://github.com/warren-bank/HLS-Proxy"
   },
   "bugs": {
-    "url":    "https://github.com/warren-bank/HLS-Proxy/issues"
+    "url": "https://github.com/warren-bank/HLS-Proxy/issues"
   }
 }

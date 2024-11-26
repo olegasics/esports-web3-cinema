@@ -14,7 +14,6 @@
     "@warren-bank/node-request": "^2.0.12",
     "@warren-bank/url": "^3.1.2",
     "hpagent": "^1.2.0",
-    "liquipedia-api": "^1.0.10",
     "regexp-match-indices": "^1.0.2",
     "tough-cookie": "^3.0.1"
   },

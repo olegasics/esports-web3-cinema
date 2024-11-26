@@ -11,3 +11,7 @@ node_modules/
 .related/.recipes/**/auth/cookies.txt
 .related/.recipes/**/*.mp4
 .related/.recipes/**/*.aac
+
+venv/
+
+*/__pycache__/

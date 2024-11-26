@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament Selection</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .tournament {
+      margin-bottom: 10px;
+    }
+
+    .tournament-matches {
+      margin-left: 20px;
+    }
+
+    .match-details {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Select Tournaments</h1>
+  <div x-data="{ 
+          loadTournaments() {
+            fetch('http://localhost:8000/get_upcoming_tournaments')
+              .then(response => {
+                if (response.ok) {
+                  console.log('Tournaments loaded:', response);
+
+                  response.json().then(data => {
+                    this.tournaments =  data
+                  })
+                }
+            })
+  }}">
+    <button @click="loadTournaments()">Load Upcoming Tournaments</button>
+    <template x-for="(tournament, index) in tournaments" :key="index">
+      <div class="tournament">
+        <label :for="tournament.link" x-text="`${tournament.name} - ${tournament.date} - ${tournament.link}`"></label>
+        <div class="tournament-matches">
+          <template x-for="(match, matchIndex) in tournament.upcoming_matches" :key="matchIndex">
+            <div class="match-details">
+              <input type="checkbox" :id="match.time" :name="`match_${index}`" :value="match.time">
+              <label :for="match.time" x-text="`${match.team1} vs ${match.team2} - ${match.time}`"></label>
+            </div>
+          </template>
+        </div>
+    </template>
+  </div>
+</body>
+
+</html>
